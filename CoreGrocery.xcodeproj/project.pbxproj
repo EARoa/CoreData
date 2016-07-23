@@ -14,6 +14,7 @@
 		101523851D441C0E00D05518 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101523841D441C0E00D05518 /* CoreDataManager.swift */; };
 		101523881D441C8600D05518 /* GroceryAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 101523861D441C8600D05518 /* GroceryAppModel.xcdatamodeld */; };
 		1015238A1D441D1500D05518 /* GroceryCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101523891D441D1500D05518 /* GroceryCategoryTableViewController.swift */; };
+		1015238C1D4423AF00D05518 /* GroceryItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1015238B1D4423AF00D05518 /* GroceryItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		101523841D441C0E00D05518 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		101523871D441C8600D05518 /* GroceryAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryAppModel.xcdatamodel; sourceTree = "<group>"; };
 		101523891D441D1500D05518 /* GroceryCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryCategoryTableViewController.swift; sourceTree = "<group>"; };
+		1015238B1D4423AF00D05518 /* GroceryItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				101523721D440EAD00D05518 /* LaunchScreen.storyboard */,
 				101523751D440EAD00D05518 /* Info.plist */,
 				101523861D441C8600D05518 /* GroceryAppModel.xcdatamodeld */,
+				1015238B1D4423AF00D05518 /* GroceryItemTableViewController.swift */,
 			);
 			path = CoreGrocery;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				101523851D441C0E00D05518 /* CoreDataManager.swift in Sources */,
 				101523881D441C8600D05518 /* GroceryAppModel.xcdatamodeld in Sources */,
+				1015238C1D4423AF00D05518 /* GroceryItemTableViewController.swift in Sources */,
 				1015238A1D441D1500D05518 /* GroceryCategoryTableViewController.swift in Sources */,
 				1015236A1D440EAD00D05518 /* AppDelegate.swift in Sources */,
 			);

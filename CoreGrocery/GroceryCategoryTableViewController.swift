@@ -99,13 +99,27 @@ class GroceryCategoryTableViewController: UITableViewController, NSFetchedResult
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let diarylist = self.fetchedResultsController.objectAtIndexPath(indexPath)
-        cell.textLabel?.text = diarylist.valueForKey("title") as? String
+        let groceryCategory = self.fetchedResultsController.objectAtIndexPath(indexPath)
+        cell.textLabel?.text = groceryCategory.valueForKey("title") as? String
         print()
         
         return cell
     
 }
     
-
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        if editStyle == UITableViewCellEditingStyle.Delete {
+            
+            let byeData: NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+            
+            self.managedObjectContext.deleteObject(byeData)
+            
+            try! self.managedObjectContext.save()
+            
+            self.tableView.reloadData()
+        }
+    }
 }
