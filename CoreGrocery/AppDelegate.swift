@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var managedObjectContext :NSManagedObjectContext!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let coreDataManager = CoreDataManager()
+        self.managedObjectContext = coreDataManager.managedObjectContext
+        
+        guard let navigationController = self.window?.rootViewController as? UINavigationController else {
+            fatalError("RootViewController not found")
+        }
+        
+        guard let groceryCategoryTableViewController = navigationController.viewControllers.first as? GroceryCategoryTableViewController else {
+            fatalError("Controller not found")
+        }
+        
+        groceryCategoryTableViewController.managedObjectContext = self.managedObjectContext
+        
+        
         return true
     }
 
