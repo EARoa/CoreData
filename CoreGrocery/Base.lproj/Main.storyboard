@@ -21,6 +21,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Stx-9H-NOT" kind="show" id="Xi8-Ez-czQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="1390" y="-50"/>
         </scene>
-        <!--Grocery Item Table View Controller-->
+        <!--Title-->
         <scene sceneID="UPa-cL-6ep">
             <objects>
                 <tableViewController id="Stx-9H-NOT" customClass="GroceryItemTableViewController" customModule="CoreGrocery" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,8 +52,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AiA-7q-Y81">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="AiA-7q-Y81">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AiA-7q-Y81" id="hZ5-cl-BTl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -63,6 +66,13 @@
                             <outlet property="delegate" destination="Stx-9H-NOT" id="JTK-ao-fUu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="QHb-9Q-vcD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ycL-vW-Hkr">
+                            <connections>
+                                <action selector="addButtonPressed" destination="Stx-9H-NOT" id="wFs-wu-yPs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1e8-2c-Ap2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

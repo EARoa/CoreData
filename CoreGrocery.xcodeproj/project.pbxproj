@@ -63,12 +63,12 @@
 				101523691D440EAD00D05518 /* AppDelegate.swift */,
 				101523891D441D1500D05518 /* GroceryCategoryTableViewController.swift */,
 				101523841D441C0E00D05518 /* CoreDataManager.swift */,
+				1015238B1D4423AF00D05518 /* GroceryItemTableViewController.swift */,
 				1015236D1D440EAD00D05518 /* Main.storyboard */,
 				101523701D440EAD00D05518 /* Assets.xcassets */,
 				101523721D440EAD00D05518 /* LaunchScreen.storyboard */,
 				101523751D440EAD00D05518 /* Info.plist */,
 				101523861D441C8600D05518 /* GroceryAppModel.xcdatamodeld */,
-				1015238B1D4423AF00D05518 /* GroceryItemTableViewController.swift */,
 			);
 			path = CoreGrocery;
 			sourceTree = "<group>";

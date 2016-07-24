@@ -16,7 +16,7 @@ class GroceryCategoryTableViewController: UITableViewController, NSFetchedResult
 
     
     @IBAction func addButtonPressed(){
-        let alert = UIAlertController(title: "Add New Grocery Item", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Add New Grocery Category", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
         })
         
@@ -24,17 +24,12 @@ class GroceryCategoryTableViewController: UITableViewController, NSFetchedResult
             let textField = alert.textFields![0] as UITextField
             print(textField.text!)
         
-       
-        
-        
             let groceryCategory = NSEntityDescription.insertNewObjectForEntityForName("GroceryCategory", inManagedObjectContext: self.managedObjectContext)
             
             groceryCategory.setValue(textField.text, forKey: "title")
             
             try! self.managedObjectContext.save()
 
-        
-        
         }))
         
         
@@ -63,6 +58,26 @@ class GroceryCategoryTableViewController: UITableViewController, NSFetchedResult
     }
 
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+            fatalError("Invalid IndexPath")
+        }
+        
+        let groceryCategory = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+        
+        
+        guard let groceryItemsTableViewController = segue.destinationViewController as? GroceryItemTableViewController else {
+            fatalError("Destination controller not found")
+        }
+        
+        groceryItemsTableViewController.groceryCategory = groceryCategory
+        groceryItemsTableViewController.managedObjectContext = self.managedObjectContext
+        
+    }
+    
+    
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
         switch(type) {
