@@ -78,7 +78,9 @@ class GroceryItemTableViewController: UITableViewController, NSFetchedResultsCon
             break
             
         case .Delete:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
             break
+
             
         case .Update:
             break
@@ -122,22 +124,11 @@ class GroceryItemTableViewController: UITableViewController, NSFetchedResultsCon
     
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
         if editingStyle == .Delete {
-            
-            let itemDelete: NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
-            
-            self.managedObjectContext.deleteObject(itemDelete)
-            
+            let deletePosts: NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+            self.managedObjectContext.deleteObject(deletePosts)
             try! self.managedObjectContext.save()
-            
-            self.tableView.reloadData()
         }
     }
-    
-    
-    
-    
 }
 
